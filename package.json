@@ -1,0 +1,57 @@
+{
+  "name": "google-fonts-file-loader",
+  "version": "1.0.0",
+  "description": "Load binary font files for Google Fonts",
+  "keywords": [
+    "googlefonts",
+    "google",
+    "fonts",
+    "ttf",
+    "otf",
+    "woff",
+    "woff2"
+  ],
+  "homepage": "https://github.com/jxdp/google-fonts-file-loader",
+  "bugs": {
+    "url": "https://github.com/jxdp/google-fonts-file-loader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxdp/google-fonts-file-loader.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "jxdp",
+    "url": "https://github.com/jxdp"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "eslint . --ext ts,js,json --fix",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "css": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/css": "^0.0.37",
+    "@typescript-eslint/eslint-plugin": "^7",
+    "@typescript-eslint/parser": "^7",
+    "eslint": "^8",
+    "eslint-config-prettier": "^9",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-prettier": "^5",
+    "prettier": "^3",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "@types/node": ">=18"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
