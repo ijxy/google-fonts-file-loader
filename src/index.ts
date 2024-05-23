@@ -1,4 +1,4 @@
-import * as css from "css";
+import { CssDeclarationAST, CssFontFaceAST, CssTypes, parse as parseCss } from "@adobe/css-tools";
 
 import {
   FontStyle,
@@ -65,16 +65,15 @@ async function getFontFaces({
 
   const stylesheet = await response.text();
 
-  return (css.parse(stylesheet).stylesheet?.rules ?? [])
-    .filter((r): r is css.FontFace => r.type === "font-face")
+  return parseCss(stylesheet)
+    .stylesheet.rules.filter((r): r is CssFontFaceAST => r.type === CssTypes.fontFace)
     .map(toFontFace);
 }
 
-function toFontFace(ff: css.FontFace): FontFace {
-  const parsedEntries = (ff.declarations ?? [])
-    .filter((d): d is css.Declaration => d.type === "declaration")
-    .map((d) => [d.property, d.value])
-    .filter((e) => !!e[0] && !!e[1]);
+function toFontFace(ff: CssFontFaceAST): FontFace {
+  const parsedEntries = ff.declarations
+    .filter((d): d is CssDeclarationAST => d.type === CssTypes.declaration)
+    .map((d) => [d.property, d.value]);
 
   const parsed = Object.fromEntries(parsedEntries) as {
     "font-family": `'${string}'`;
