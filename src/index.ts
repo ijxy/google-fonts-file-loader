@@ -1,4 +1,4 @@
-import css from "css";
+import * as css from "css";
 
 import {
   FontStyle,
@@ -19,10 +19,7 @@ export type Font = {
   data: ArrayBuffer;
 };
 
-export async function loadGoogleFonts({
-  fonts,
-  text,
-}: LoadGoogleFontsInput): Promise<Array<Font>> {
+export async function loadGoogleFonts({ fonts, text }: LoadGoogleFontsInput): Promise<Array<Font>> {
   const fontFaces = await getFontFaces({ fonts, text });
   const results = await Promise.allSettled(fontFaces.map(toFont));
   return results
@@ -86,7 +83,7 @@ function toFontFace(ff: css.FontFace): FontFace {
     src: `url(${string}) format('${string}')`;
   };
 
-  const [srcUrl, srcFormat] = parsed.src.split(" ");
+  const [srcUrl = "", srcFormat = ""] = parsed.src.split(" ");
 
   return {
     name: parsed["font-family"].slice("'".length, -"'".length), // strip '...'

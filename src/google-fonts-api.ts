@@ -32,9 +32,7 @@ function constructFontsQuery(fonts: Array<GoogleFontParams>) {
   return fonts.map(constructFontQuery).join("|");
 }
 
-const DEFAULT_WEIGHTS: Array<FontWeight> = [
-  100, 200, 300, 400, 500, 600, 700, 800, 900,
-];
+const DEFAULT_WEIGHTS: Array<FontWeight> = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 const DEFAULT_STYLES: Array<FontStyle> = ["normal", "italic"];
 
 function constructFontQuery(params: GoogleFontParams): string {
