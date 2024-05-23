@@ -40,13 +40,8 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.6",
     "@types/css": "^0.0.37",
-    "@typescript-eslint/eslint-plugin": "^7",
-    "@typescript-eslint/parser": "^7",
     "eslint": "^8",
-    "eslint-config-prettier": "^9",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-prettier": "^5",
-    "prettier": "^3",
+    "eslint-config-tip": "^1.0.0",
     "typescript": "^5"
   },
   "peerDependencies": {
