@@ -1,6 +1,6 @@
 {
   "name": "google-fonts-file-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Load binary font files for Google Fonts",
   "keywords": [
     "googlefonts",
