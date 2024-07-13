@@ -11,18 +11,18 @@
     "woff",
     "woff2"
   ],
-  "homepage": "https://github.com/jxdp/google-fonts-file-loader",
+  "homepage": "https://github.com/ijxy/google-fonts-file-loader",
   "bugs": {
-    "url": "https://github.com/jxdp/google-fonts-file-loader/issues"
+    "url": "https://github.com/ijxy/google-fonts-file-loader/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jxdp/google-fonts-file-loader.git"
+    "url": "git+https://github.com/ijxy/google-fonts-file-loader.git"
   },
   "license": "MIT",
   "author": {
-    "name": "jxdp",
-    "url": "https://github.com/jxdp"
+    "name": "ijxy",
+    "url": "https://github.com/ijxy"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
